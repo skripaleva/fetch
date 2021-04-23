@@ -1,5 +1,5 @@
 const search = window.location.search;
-
+console.log(search);
 let getName = function(url) {
     let urlArray = url.split('=');
     let name = urlArray[1];
@@ -49,7 +49,7 @@ let getParams = fetch(url)
             createAvatar();
         }
         else {
-            alert(' Пользователь с таким никнеймом не найден')
+            throw new Error(' Пользователь с таким никнеймом не найден')
         }
-    }).catch(err => console.log(err));
+    }).catch(err => alert(err));
 
